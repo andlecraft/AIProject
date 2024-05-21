@@ -1,4 +1,4 @@
-document.getElementById("myButton").addEventListener("click", function() {
-    alert("버튼이 클릭되었습니다!"); //not using
+document.getElementById("highlightButton").addEventListener("click", function() {
+    alert("계산중 !!!"); //not using
   }); 
   
