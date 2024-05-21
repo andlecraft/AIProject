@@ -15,12 +15,12 @@
       "default_popup": "popup.html",
       "default_icon": "Sample.png"
   },
-  "permissions": [ //수정필요시 @pepsi 에게 말좀 해줄것 
+  "permissions": [ 
       "tabs",
       "activeTab",
       "storage"
   ],
-  "content_scripts": [ //수정필요시 @pepsi 에게 말좀 해줄것 
+  "content_scripts": [ 
       { 
           "matches": [
               "http://*/*",

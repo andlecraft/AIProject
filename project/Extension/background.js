@@ -3,4 +3,8 @@ chrome.action.onClicked.addListener((tab) => {
   });
   
 
-  //여기에 기능구현 해야함
+  chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    if (message.action === "highlightSelection") {
+        chrome.runtime.sendMessage({ action: "highlightSelection", text: message.text });
+    }
+});

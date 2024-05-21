@@ -14,9 +14,19 @@
             width: 300px; 
             height: 300px;
             font-family: 'GmarketSansMedium', sans-serif; 
+            border-radius: 50%; /* 둥근 모서리 */
+            background-color: #261a5a; /* 배경 색상 */
+            margin: 0;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+            overflow: hidden;
         }
         h1 { 
             font-size: 18px; 
+            color:azure;
+        }
+        p {
+            color: antiquewhite;
         }
         button {
             background-color: #4c6faf; 
@@ -29,16 +39,34 @@
             font-size: 16px;
             margin: 4px 2px;
             cursor: pointer;
-            border-radius: 4px;
+            border-radius: 5%;
+        }
+        .background-image {
+            background-image: url('Sample.png'); 
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        span{
+            color:azure;
+        }
+        .styled-image{
+            width: 14%;
+            height: auto;
+            position: relative;
+            border: 5px solid #000; 
+            border-radius: 50%; 
         }
     </style>
 </head>
 <body>
+    <img src="Sample.png" alt="SUS" class="styled-image">
     <h1>What is your credibility?</h1>
     <p>hummmmmm...</p>
-    <button id="highlightButton">Highlight Selection</button>
-    <script src="popup.js"></script> 
-    <script src="content.js"></script>
+    <button id="highlightButton">Highlight Selection</button><br/>
+    <span class="result"></span><br/>
+    <script src="popup.js"></script>
     <script src="AiTrigger.js"></script> 
 </body>
 </html>
