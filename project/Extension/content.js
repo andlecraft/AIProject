@@ -31,10 +31,9 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-
+// 될거 같은데 렉이 아직 많음 최적화 시급 
 document.addEventListener('selectionchange', function() {
     var selection = window.getSelection();
-    console.log("work1");
     if (selection.toString().length > 0) {
         var targetClass = "target";
         var range = selection.getRangeAt(0);
@@ -42,12 +41,16 @@ document.addEventListener('selectionchange', function() {
         var wrapper = document.createElement("span");
         wrapper.classList.add(targetClass);
 
-        console.log("work2");
-
         try {
-            wrapper.appendChild(range.extractContents());
+            const contents = range.cloneContents();
+            wrapper.appendChild(contents);
+            range.deleteContents();
             range.insertNode(wrapper);
-            chrome.runtime.sendMessage({ action: "highlightSelection", text: selection.toString() });
+
+            setTimeout(()=>{
+                chrome.runtime.sendMessage({ action: "highlightSelection", text: selection.toString() });
+                console.log("set time out done")
+            }, 2000);
         } catch (e) {
             console.error("Error wrapping selection:", e);
         }
