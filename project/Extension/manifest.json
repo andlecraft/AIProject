@@ -32,14 +32,5 @@
   ],
   "content_security_policy": {
       "extension_pages": "script-src 'self'; object-src 'self'" 
-  },
-  "web_accessible_resources": [
-    {
-      "resources": [
-        "https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js",
-        "https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"
-      ],
-      "matches": ["<all_urls>"]
-    }
-  ]
+  }
 }
