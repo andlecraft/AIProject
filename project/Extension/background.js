@@ -5,7 +5,6 @@ chrome.action.onClicked.addListener((tab) => {
 
   chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message.action === "highlightSelection") {
-        console.log("Message received:", message.text);
-        sendResponse({ status: "success" });
+        chrome.runtime.sendMessage({ action: "highlightSelection", text: message.text });
     }
 });
